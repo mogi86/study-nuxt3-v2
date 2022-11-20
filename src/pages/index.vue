@@ -1,42 +1,28 @@
 <template>
-  <h1>Top Page</h1>
-  <div>
-    <display-list :animals="animals" />
-  </div>
+  <h1>Index Page!</h1>
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue"
-import {Animal} from "@/type/animal"
-import displayList from "@/components/displayList.vue";
+import {set} from "~/service/SetCookie";
+import {defineComponent} from "vue";
+import {useCookie} from "#app";
 
 export default defineComponent({
-  components: {
-    displayList
-  },
   setup () {
-    const animals: Animal[] = [{
-      id: 1,
-      name: 'Dog',
-      addedProcess: process.client ? 'client' : 'server'
-    }]
+    console.log('step-1')
 
-    animals.push({
-      id: 2,
-      name: 'Cat',
-      addedProcess: process.client ? 'client' : 'server'
-    })
-
-    if (process.server) {
-      animals.push({
-        id: 3,
-        name: 'Bird',
-        addedProcess: process.client ? 'client' : 'server'
-      })
+    async function hoge () {
+      console.log('step-2')
+      await set()
+      console.log('step-3')
     }
+    hoge()
+    console.log('step-4')
+
+    console.log(useCookie('hoge').value)
 
     return {
-      animals
+      hoge
     }
   }
 })
