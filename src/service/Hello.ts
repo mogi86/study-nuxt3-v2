@@ -22,7 +22,7 @@ export async function getHello () {
     // => why error: https://nuxt.com/docs/getting-started/data-fetching#using-async-setup
 
     //--------------
-    // case3: multiple await at together
+    // case3: multiple await at together (use custom useAsyncData)
     //   => no error
     //--------------
     const [{data: data1}, {data: data2}] = await Promise.all([
@@ -33,7 +33,7 @@ export async function getHello () {
     console.log('response2=', data2.value)
 
     //--------------
-    // case4: multiple await at together (use custom useAsyncData)
+    // case4: multiple await at together
     //   => no error
     //--------------
     // const [{data: data1}, {data: data2}] = await Promise.all([
