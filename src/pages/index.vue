@@ -3,12 +3,22 @@
 </template>
 
 <script setup lang="ts">
-import {set} from "~/service/SetCookie";
+import {getHello, getHello2} from "~/service/Hello";
 
-async function hoge () {
-  set()
-}
-await hoge()
+//-------
+// no error
+//-------
+// await getHello()
+// await getHello2()
+
+//-------
+// no error
+//-------
+Promise.all([
+  getHello(),
+  getHello2()
+])
+
 </script>
 
 <style scoped>
