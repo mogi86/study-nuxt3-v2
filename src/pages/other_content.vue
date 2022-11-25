@@ -4,6 +4,7 @@
 
 <script setup lang="ts">
 import {useFetch, useRoute} from "#app";
+import {parseQuery, stringifyQuery} from "vue-router";
 
 const route = useRoute()
 const { data } = await useFetch(`/api/content`, {
