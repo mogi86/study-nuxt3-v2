@@ -9,3 +9,17 @@ export async function synchronizeToStorage () {
     console.log(data.value)
     cookie.value = data.value
 }
+
+export async function callMultipleApi () {
+    const { data: response1 } = await get('/api/hello')
+    const { data: response2 } = await get('/api/hello')
+}
+
+export async function callMultipleApiViaFunc () {
+    await callSingleApi()
+    await callSingleApi()
+}
+
+async function callSingleApi () {
+    const { data: response1 } = await get('/api/hello')
+}
