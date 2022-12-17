@@ -7,11 +7,16 @@ import {onMounted} from "@vue/runtime-core";
 import {useAsyncData, useCookie} from "#app";
 
 onMounted(async () => {
-  const { data: response1 } = await useAsyncData(() => $fetch('/api/hello', {
-    method: 'post'
-  }))
   // response1 is 'undefined'
-  console.log('response1:', response1.value)
+  // const { data: response1 } = await useAsyncData(() => $fetch('/api/hello', {
+  //   method: 'post'
+  // }))
+
+  await $fetch('/api/hello', {
+    method: 'post'
+  }).then((response1) => {
+    console.log('response1:', response1)
+  })
 
   const { data: response2 } = await useAsyncData(() => $fetch('/api/hello', {
     method: 'get'
