@@ -8,7 +8,7 @@
 import {useLazyFetch} from "#app"
 import {ref, watch} from "@vue/runtime-core";
 
-const { data, pending } = useLazyFetch('/api/five_second_sleep', {
+const { data, pending } = await useLazyFetch('/api/five_second_sleep', {
   method: 'get',
   server: false
 })
