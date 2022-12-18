@@ -2,6 +2,10 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Document
+
+https://github.com/mogi86/study-nuxt3-v2/wiki
+
 ## Setup
 
 Make sure to install the dependencies:
