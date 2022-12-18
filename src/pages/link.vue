@@ -10,6 +10,11 @@
       useLazyFetch
     </NuxtLink>
   </div>
+  <div>
+    <NuxtLink to="/fetch_lazy_fetch_call_post_api">
+      useLazyFetch calling post pai
+    </NuxtLink>
+  </div>
 </template>
 
 <script>

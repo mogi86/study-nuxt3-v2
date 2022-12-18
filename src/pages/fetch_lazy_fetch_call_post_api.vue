@@ -9,13 +9,13 @@ import {onMounted, watch} from "@vue/runtime-core"
 import {useAsyncData, useFetch, useLazyFetch} from "#app";
 
 // it works
-// const { data: response } = await useLazyFetch('/api/five_second_sleep', {
-//   method: 'post',
-//   server: false
-// })
-// watch(response, () => {
-//   console.log('response:', response.value)
-// })
+const { data: response } = await useLazyFetch('/api/five_second_sleep', {
+  method: 'post',
+  server: false
+})
+watch(response, () => {
+  console.log('response:', response.value)
+})
 
 // it don't work
 // const { data: response2 } = await useFetch('/api/five_second_sleep', {
