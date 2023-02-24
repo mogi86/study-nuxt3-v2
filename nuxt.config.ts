@@ -3,8 +3,5 @@ export default defineNuxtConfig({
     srcDir: 'src/',
     modules: [
         '@pinia/nuxt'
-    ],
-    routeRules: {
-        '/swr': { swr: true }
-    }
+    ]
 })
